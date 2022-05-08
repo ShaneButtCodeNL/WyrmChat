@@ -12,35 +12,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1416655153,
+        "HashCode": 1785956468,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Pages.Counter",
+        "Name": "WyrmChat.Pages.About",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Counter"
+            "TagName": "About"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Pages.Counter"
+          "Common.TypeName": "WyrmChat.Pages.About"
         }
       },
       {
-        "HashCode": 1223552019,
+        "HashCode": -1711065693,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Pages.Counter",
+        "Name": "WyrmChat.Pages.About",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.Pages.Counter"
+            "TagName": "WyrmChat.Pages.About"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Pages.Counter",
+          "Common.TypeName": "WyrmChat.Pages.About",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -78,55 +78,68 @@
         }
       },
       {
-        "HashCode": -351366856,
+        "HashCode": -1882924258,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Shared.SurveyPrompt",
+        "Name": "WyrmChat.App",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt"
+          "Common.TypeName": "WyrmChat.App"
         }
       },
       {
-        "HashCode": 1520490943,
+        "HashCode": -1691236479,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Shared.SurveyPrompt",
+        "Name": "WyrmChat.App",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "WyrmChat.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt",
+          "Common.TypeName": "WyrmChat.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 873539341,
+        "Kind": "Components.Component",
+        "Name": "WyrmChat.Components.ChatBox",
+        "AssemblyName": "WyrmChat",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChatBox"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WyrmChat.Components.ChatBox"
+        }
+      },
+      {
+        "HashCode": -1117063014,
+        "Kind": "Components.Component",
+        "Name": "WyrmChat.Components.ChatBox",
+        "AssemblyName": "WyrmChat",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "WyrmChat.Components.ChatBox"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WyrmChat.Components.ChatBox",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -223,39 +236,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "WyrmChat.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1882924258,
-        "Kind": "Components.Component",
-        "Name": "WyrmChat.App",
-        "AssemblyName": "WyrmChat",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.App"
-        }
-      },
-      {
-        "HashCode": -1691236479,
-        "Kind": "Components.Component",
-        "Name": "WyrmChat.App",
-        "AssemblyName": "WyrmChat",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "WyrmChat.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -16546,8 +16526,18 @@
   "RootNamespace": "WyrmChat",
   "Documents": [
     {
+      "FilePath": "e:\\code\\cSharp\\WyrmChat\\Components\\ChatBox.razor",
+      "TargetPath": "Components\\ChatBox.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "e:\\code\\cSharp\\WyrmChat\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "e:\\code\\cSharp\\WyrmChat\\Pages\\About.razor",
+      "TargetPath": "Pages\\About.razor",
       "FileKind": "component"
     },
     {
@@ -16564,11 +16554,6 @@
       "FilePath": "e:\\code\\cSharp\\WyrmChat\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "e:\\code\\cSharp\\WyrmChat\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
     },
     {
       "FilePath": "e:\\code\\cSharp\\WyrmChat\\Pages\\Error.cshtml",

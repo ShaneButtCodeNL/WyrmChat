@@ -1,0 +1,87 @@
+@using Microsoft.AspNetCore.SignalR.Client;
+@using WyrmChat.Models;
+@inject NavigationManager NavigationManager;
+@implements IAsyncDisposable;
+<div>
+   <h1 style="color:white;">WyrmChat</h1>
+   <div class="container overflow-auto shadow-sm p-3 mb-5 rounded" style="height:500px;width:90%;background-color:rgba(255,255,255,.1">
+      @if(!userMessages.Any()){
+         <p>No Messages.</p>
+      }
+      @foreach (var userMsg in userMessages){
+         <div class="row mb-3 d-flex @((userMsg.UserName==userNameInput)?"justify-content-end":"")">
+            <div class="card shadow @((userMsg.UserName==userNameInput)?"color-user":"color-other ml-5")" style="width:60%;padding:0;">
+               <div class="card-header">
+                  @((userMsg.UserName==userNameInput)?"You":userMsg.UserName)
+               </div>
+               <ul class="list-group list-group-flush">
+                  <li class="list-group-item">@userMsg.Message</li>
+               </ul>
+               <div class="card-footer">
+                  <span class="small">@userMsg.DateSent.ToString("HH:mm | MMM dd")</span>
+               </div>
+            </div>
+         </div>
+      }
+   </div>
+   <div class="container" style="display:flex;flex-direction:column;row-gap:.5em;width:90%;">
+      <div class="row">   
+         <div class="col-7" style="margin: 0 auto;">
+            <input type="text" @bind="userNameInput" class="form-control" readonly="@isUserReadOnly" placeholder="Name"/>
+         </div>
+      </div>
+      <div class="row">
+         <textarea @bind="messageInput" class="form-control" placeholder="Start Typing . . ."></textarea>
+      </div>
+      <div class="row">
+         <div class="col-5" style="margin:0 auto;">
+         <button type="button" @onclick="Send" disabled="@(!isConnected)" class="btn btn-primary">
+            SEND
+         </button>
+         </div>
+      </div>
+   </div>
+</div>
+@code{
+   private HubConnection _hubConnection;
+   private List<UserMessage> userMessages = ChatLog.GetChatLog;//new();
+   private string userNameInput;
+   private string messageInput;
+   private bool isUserReadOnly=false;
+
+   public bool isConnected=>_hubConnection.State==HubConnectionState.Connected;
+
+   protected override async  Task OnInitializedAsync()
+   {
+      _hubConnection=new HubConnectionBuilder().WithUrl(NavigationManager.ToAbsoluteUri("/chathub")).Build();
+      
+      _hubConnection.On<string,string>("RecieveMessage",(user,message)=>{
+         userMessages=ChatLog.GetChatLog;
+         StateHasChanged();
+      });
+      await _hubConnection.StartAsync();
+   }
+
+   private async Task Send(){
+      if(!string.IsNullOrEmpty(userNameInput) && !string.IsNullOrEmpty(messageInput)){
+         await _hubConnection.SendAsync("SendMessage",userNameInput,messageInput);
+         ChatLog.AddMessage(new UserMessage{
+            UserName=userNameInput,
+            Message=messageInput,
+            CurrentUser=true,
+            DateSent=DateTime.Now
+         });
+      }
+      isUserReadOnly=true;
+      messageInput=string.Empty;
+   }
+
+   public async ValueTask DisposeAsync(){
+      if(_hubConnection != null) await _hubConnection.DisposeAsync();
+   }
+
+#line default
+#line hidden
+#nullable disable
+
+}
