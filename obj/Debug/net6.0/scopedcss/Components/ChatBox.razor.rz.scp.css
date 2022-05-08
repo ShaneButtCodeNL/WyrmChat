@@ -1,0 +1,13 @@
+.chatboxContainer[b-rr9oazzmey] {
+  height: 100%;
+}
+
+.chatboxInputContainer[b-rr9oazzmey] {
+  position: absolute;
+  margin: 0 5%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  width: 90%;
+}

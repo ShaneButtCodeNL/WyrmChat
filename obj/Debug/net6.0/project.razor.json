@@ -111,35 +111,55 @@
         }
       },
       {
-        "HashCode": 873539341,
+        "HashCode": -351366856,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Components.ChatBox",
+        "Name": "WyrmChat.Shared.SurveyPrompt",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ChatBox"
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Components.ChatBox"
+          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt"
         }
       },
       {
-        "HashCode": -1117063014,
+        "HashCode": 1520490943,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Components.ChatBox",
+        "Name": "WyrmChat.Shared.SurveyPrompt",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.Components.ChatBox"
+            "TagName": "WyrmChat.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Components.ChatBox",
+          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -236,6 +256,39 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "WyrmChat.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 873539341,
+        "Kind": "Components.Component",
+        "Name": "WyrmChat.Components.ChatBox",
+        "AssemblyName": "WyrmChat",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChatBox"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WyrmChat.Components.ChatBox"
+        }
+      },
+      {
+        "HashCode": -1117063014,
+        "Kind": "Components.Component",
+        "Name": "WyrmChat.Components.ChatBox",
+        "AssemblyName": "WyrmChat",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "WyrmChat.Components.ChatBox"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WyrmChat.Components.ChatBox",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -16554,6 +16607,11 @@
       "FilePath": "e:\\code\\cSharp\\WyrmChat\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "e:\\code\\cSharp\\WyrmChat\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
     },
     {
       "FilePath": "e:\\code\\cSharp\\WyrmChat\\Pages\\Error.cshtml",

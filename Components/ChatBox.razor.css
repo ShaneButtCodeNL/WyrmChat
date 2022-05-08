@@ -1,0 +1,13 @@
+.chatboxContainer {
+  height: 100%;
+}
+
+.chatboxInputContainer {
+  position: absolute;
+  margin: 0 5%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  width: 90%;
+}

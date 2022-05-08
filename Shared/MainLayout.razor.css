@@ -15,3 +15,10 @@ main {
   height: 100vh;
   padding: 1em 0;
 }
+
+.sidebarInner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}

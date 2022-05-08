@@ -35,3 +35,4 @@ E:\code\cSharp\WyrmChat\obj\Debug\net6.0\WyrmChat.dll
 E:\code\cSharp\WyrmChat\obj\Debug\net6.0\ref\WyrmChat.dll
 E:\code\cSharp\WyrmChat\obj\Debug\net6.0\WyrmChat.pdb
 E:\code\cSharp\WyrmChat\obj\Debug\net6.0\WyrmChat.genruntimeconfig.cache
+E:\code\cSharp\WyrmChat\obj\Debug\net6.0\scopedcss\Components\ChatBox.razor.rz.scp.css

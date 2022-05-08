@@ -2,29 +2,27 @@
 @using WyrmChat.Models;
 @inject NavigationManager NavigationManager;
 @implements IAsyncDisposable;
-<div>
+<div class="chatboxContainer">
    <h1 style="color:white;">WyrmChat</h1>
    <div class="container overflow-auto shadow-sm p-3 mb-5 rounded" style="height:500px;width:90%;background-color:rgba(255,255,255,.1">
       @if(!userMessages.Any()){
-         <p>No Messages.</p>
+         <p style="color:white;">No Messages.</p>
       }
       @foreach (var userMsg in userMessages){
          <div class="row mb-3 d-flex @((userMsg.UserName==userNameInput)?"justify-content-end":"")">
             <div class="card shadow @((userMsg.UserName==userNameInput)?"color-user":"color-other ml-5")" style="width:60%;padding:0;">
-               <div class="card-header">
-                  @((userMsg.UserName==userNameInput)?"You":userMsg.UserName)
+               <div class="card-header" style="display:flex;justify-content:space-between;flex-wrap:wrap;">
+                  <span>@((userMsg.UserName==userNameInput)?"You":userMsg.UserName)</span>
+                  <span class="small">@userMsg.DateSent.ToString("HH:mm | MMM dd")</span>
                </div>
                <ul class="list-group list-group-flush">
                   <li class="list-group-item">@userMsg.Message</li>
                </ul>
-               <div class="card-footer">
-                  <span class="small">@userMsg.DateSent.ToString("HH:mm | MMM dd")</span>
-               </div>
             </div>
          </div>
       }
    </div>
-   <div class="container" style="display:flex;flex-direction:column;row-gap:.5em;width:90%;">
+   <div class="container chatboxInputContainer" >
       <div class="row">   
          <div class="col-7" style="margin: 0 auto;">
             <input type="text" @bind="userNameInput" class="form-control" readonly="@isUserReadOnly" placeholder="Name"/>
