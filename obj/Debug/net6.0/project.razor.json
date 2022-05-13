@@ -260,6 +260,61 @@
         }
       },
       {
+        "HashCode": 1127599464,
+        "Kind": "Components.Component",
+        "Name": "WyrmChat.Components.ChatLogin",
+        "AssemblyName": "WyrmChat",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChatLogin"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "setUser",
+            "TypeName": "System.Action<WyrmChat.Models.User>",
+            "Metadata": {
+              "Common.PropertyName": "setUser",
+              "Components.DelegateSignature": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WyrmChat.Components.ChatLogin"
+        }
+      },
+      {
+        "HashCode": -860406356,
+        "Kind": "Components.Component",
+        "Name": "WyrmChat.Components.ChatLogin",
+        "AssemblyName": "WyrmChat",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "WyrmChat.Components.ChatLogin"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "setUser",
+            "TypeName": "System.Action<WyrmChat.Models.User>",
+            "Metadata": {
+              "Common.PropertyName": "setUser",
+              "Components.DelegateSignature": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WyrmChat.Components.ChatLogin",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 873539341,
         "Kind": "Components.Component",
         "Name": "WyrmChat.Components.ChatBox",
@@ -16601,6 +16656,11 @@
     {
       "FilePath": "e:\\code\\cSharp\\WyrmChat\\App.razor",
       "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "e:\\code\\cSharp\\WyrmChat\\Components\\ChatLogin.razor",
+      "TargetPath": "Components\\ChatLogin.razor",
       "FileKind": "component"
     },
     {

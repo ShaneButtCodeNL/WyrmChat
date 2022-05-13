@@ -1,18 +1,45 @@
 @using Microsoft.AspNetCore.SignalR.Client;
 @using WyrmChat.Models;
+@using WyrmChat.Data;
 @inject NavigationManager NavigationManager;
 @implements IAsyncDisposable;
 <div class="chatboxContainer">
    <h1 style="color:white;">WyrmChat</h1>
+   @if(LoggedInUser is not null){
+      <span>@LoggedInUser.UserName @LoggedInUser.UserID</span>
+   }
+   <!--Select/Make Room Here -->
+   @if(LoggedInUser is not null && roomID==0){
+      <form id="chooseRoomForm">
+         @if(chatRoomMade){
+            <label for="selectRoom">Select a Room Please:</label>
+            <br/>
+            <select id="selectRoom" @bind=@selectedRoomID>
+               <option id="defaultSelectRoom" selected disabled hidden value="" ></option>
+               @foreach (var item in ChatLogs.GetListOfChatLogIDs())
+               {
+                  <option id=$"{item}" value=$"{item}">@item</option>
+               }
+            </select>
+            <button type="button" @onclick="@JoinChatRoom">Join Room</button>
+         }
+         <div>
+            <label>Make a new Room</label>
+            <button type="button" disabled="@(!isConnected)" @onclick="@MakeNewChatRoom">Make Room</button>
+         </div>
+      </form>
+   }
+   <!--Display the ChatLog for selected room -->
+   @if(LoggedInUser is not null && roomID!=0){
    <div class="container overflow-auto shadow-sm p-3 mb-5 rounded" style="height:500px;width:90%;background-color:rgba(255,255,255,.1">
       @if(!userMessages.Any()){
          <p style="color:white;">No Messages.</p>
       }
       @foreach (var userMsg in userMessages){
-         <div class="row mb-3 d-flex @((userMsg.UserName==userNameInput)?"justify-content-end":"")">
-            <div class="card shadow @((userMsg.UserName==userNameInput)?"color-user":"color-other ml-5")" style="width:60%;padding:0;">
+         <div class="row mb-3 d-flex @((userMsg.UserName==LoggedInUser.UserName)?"justify-content-end":"")">
+            <div class="card shadow @((userMsg.UserName==LoggedInUser.UserName)?"color-user":"color-other ml-5")" style="width:60%;padding:0;">
                <div class="card-header" style="display:flex;justify-content:space-between;flex-wrap:wrap;">
-                  <span>@((userMsg.UserName==userNameInput)?"You":userMsg.UserName)</span>
+                  <span>@((userMsg.UserName==LoggedInUser.UserName)?"You":userMsg.UserName)</span>
                   <span class="small">@userMsg.DateSent.ToString("HH:mm | MMM dd")</span>
                </div>
                <ul class="list-group list-group-flush">
@@ -22,60 +49,103 @@
          </div>
       }
    </div>
+   }
    <div class="container chatboxInputContainer" >
-      <div class="row">   
-         <div class="col-7" style="margin: 0 auto;">
-            <input type="text" @bind="userNameInput" class="form-control" readonly="@isUserReadOnly" placeholder="Name"/>
+      <!-- User Login -->
+      @if(LoggedInUser is null){
+         <div class="row">
+            <ChatLogin setUser=@setUser />
+            @if(LoggedInUser is not null){
+               <span>@LoggedInUser.UserName @LoggedInUser.UserID</span>
+            }
          </div>
-      </div>
-      <div class="row">
-         <textarea @bind="messageInput" class="form-control" placeholder="Start Typing . . ."></textarea>
-      </div>
-      <div class="row">
-         <div class="col-5" style="margin:0 auto;">
-         <button type="button" @onclick="Send" disabled="@(!isConnected)" class="btn btn-primary">
-            SEND
-         </button>
+      }
+      <!-- User interface for entering a message and logout -->
+      @if(LoggedInUser is not null){
+         <div class="row">
+            <textarea @bind="messageInput" class="form-control" placeholder="Start Typing . . ."></textarea>
          </div>
-      </div>
+         <div class="row">
+            <div class="col-5" style="margin:0 auto;">
+               <button type="button" @onclick="SendToGroup" disabled="@(!isConnected)" class="btn btn-primary">
+                  SEND
+               </button>
+               <button type="button" @onclick="LeaveChatRoom" disabled="@(!isConnected)" class="btn btn-primary">
+                  Leave Room
+               </button>
+            </div>
+         </div>
+      }
    </div>
 </div>
 @code{
    private HubConnection _hubConnection;
-   private List<UserMessage> userMessages = ChatLog.GetChatLog;//new();
-   private string userNameInput;
+   private List<UserMessage> userMessages = new List<UserMessage>(){};
    private string messageInput;
    private bool isUserReadOnly=false;
+   private User? LoggedInUser=null;
+   private int roomID=0;
+   private string selectedRoomID="";
+   private bool chatRoomMade=!ChatLogs.IsEmpty();
 
    public bool isConnected=>_hubConnection.State==HubConnectionState.Connected;
+
+   public void setUser(User? user){
+      LoggedInUser=user;
+      StateHasChanged();
+   }
 
    protected override async  Task OnInitializedAsync()
    {
       _hubConnection=new HubConnectionBuilder().WithUrl(NavigationManager.ToAbsoluteUri("/chathub")).Build();
       
-      _hubConnection.On<string,string>("RecieveMessage",(user,message)=>{
-         userMessages=ChatLog.GetChatLog;
+      _hubConnection.On( "UpdateChatRoomList",()=>{
+         chatRoomMade=!ChatLogs.IsEmpty();
+         StateHasChanged();
+      });
+      _hubConnection.On<string,string,int>("RecieveMessageToGroup",(user,message,chatID)=>{
+         userMessages=ChatLogs.GetChatLog(chatID).GetChatLog;
+         StateHasChanged();
+      });
+      _hubConnection.On<int>("UpdateListForClient",(chatID)=>{
+         userMessages=ChatLogs.GetChatLog(chatID).GetChatLog;
          StateHasChanged();
       });
       await _hubConnection.StartAsync();
    }
 
-   private async Task Send(){
-      if(!string.IsNullOrEmpty(userNameInput) && !string.IsNullOrEmpty(messageInput)){
-         await _hubConnection.SendAsync("SendMessage",userNameInput,messageInput);
-         ChatLog.AddMessage(new UserMessage{
-            UserName=userNameInput,
+   private async Task SendToGroup(){
+      if(LoggedInUser is not null && !string.IsNullOrEmpty(messageInput)){
+         await _hubConnection.SendAsync("SendMessageToGroup",LoggedInUser,messageInput,roomID);
+         ChatLogs.GetChatLog(roomID).AddMessage(new UserMessage{
+            UserName=LoggedInUser.UserName,
             Message=messageInput,
             CurrentUser=true,
             DateSent=DateTime.Now
          });
       }
-      isUserReadOnly=true;
       messageInput=string.Empty;
    }
 
    public async ValueTask DisposeAsync(){
       if(_hubConnection != null) await _hubConnection.DisposeAsync();
+   }
+
+   public async void JoinChatRoom(){
+      roomID=int.Parse(selectedRoomID);
+      await _hubConnection.SendAsync("AddToChat",roomID);
+   }
+
+   public async void LeaveChatRoom(){
+      await _hubConnection.SendAsync("RemoveFromChat",roomID);
+      roomID=0;
+      selectedRoomID="";
+      StateHasChanged();
+   }
+
+   public async void MakeNewChatRoom(){
+      roomID=ChatLogs.AddChatLog();
+      await _hubConnection.SendAsync("AddToChat",roomID);
    }
 
 #line default

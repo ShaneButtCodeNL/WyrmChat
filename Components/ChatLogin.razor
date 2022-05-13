@@ -1,0 +1,95 @@
+@using WyrmChat.Data;
+@using WyrmChat.Models;
+
+<div class="ChatLoginWrapper">
+   <div class="ChatLoginContainer">
+      @if(register && currentUser is null){
+         <form id="regForm">
+            <label for="regName">UserName :</label>
+            <input type="text" id="regName" @bind=@registerUserName />
+            <label for="regPass">Password :</label>
+            <input type="text" id="regPass" @bind=@registerPassword />
+            <button type="button" onclick=@(()=>Register(registerUserName,registerPassword))>
+               Confirm
+            </button>
+            <button type="button" onclick=@(()=>Cancel())>
+               Cancel
+            </button>
+         </form>
+      }
+      @if(login && currentUser is null){
+         <form id="loginForm">
+            <label for="logName">UserName :</label>
+            <input type="text" id="logName" @bind=@loginUserName  />
+            <label for="logPass">Password :</label>
+            <input type="password" id="logPass" @bind=@loginPassword   />
+            <button type="button" @onclick=@(()=>Login(loginUserName,loginPassword))>
+               Login           
+            </button>
+            <button type="button" @onclick=@(()=>Cancel())>
+               Cancel
+            </button>
+         </form>
+      }
+      @if(!login && !register && currentUser is null){
+         <form id="anonControl">
+            <button type="button" onclick=@(()=>{register=true;})>
+               Register
+            </button>
+            <button type="button" onclick=@(()=>{login=true;})>
+               Login
+            </button>
+         </form>
+      }
+      @if(currentUser is not null){
+         <form>
+            <span>User: @currentUser.UserName</span>
+            <button type="button" @onclick=@(()=>Logout())>Logout</button>
+         </form>
+      }
+   </div>
+</div>
+
+@code{
+   [Parameter]
+   public Action<User?> setUser{get;set;}
+   private User? currentUser{get;set;}=null;
+   private bool register=false;
+   private bool login=false;
+
+   private string registerUserName="";
+   private string registerPassword="";
+   private string loginUserName="";
+   private string loginPassword="";
+
+   private void Login(string name,string pass){
+      if(name==""||pass=="")return;
+      var user=Users.Login(name,pass);
+      if(user is null)return;
+      setUser(user);
+      currentUser=user;
+      Cancel();
+   }
+
+   private void Logout(){
+      setUser(null);
+      currentUser=null;
+      Cancel();
+   }
+
+   private void Register(string name,string pass){
+      if(name==""||pass=="")return;
+      var user=Users.AddUser(name,pass);
+      if(user is null)return;
+      Login(name,pass);
+
+   }
+
+   private void Cancel(){
+      register=false;
+      login=false;
+   }
+   #line default
+   #line hidden
+   #nullable disable
+}
