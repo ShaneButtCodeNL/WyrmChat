@@ -11,3 +11,49 @@
   row-gap: 0.5em;
   width: 90%;
 }
+span[b-rr9oazzmey],
+label[b-rr9oazzmey] {
+  color: azure;
+}
+.msgSpan[b-rr9oazzmey] {
+  color: black;
+}
+.userMessageButtonBox[b-rr9oazzmey] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.2em 0;
+}
+
+.loggedInDetailsBox span[b-rr9oazzmey] {
+  color: azure;
+}
+.loggedInDetailsBox[b-rr9oazzmey] {
+  margin-bottom: 1em;
+}
+#chooseRoomForm[b-rr9oazzmey] {
+  display: grid;
+  grid-template-columns: 1em auto 30% 1em;
+  grid-template-rows: auto;
+  gap: 0.3em;
+  place-content: center;
+  grid-template-areas:
+    ". instructions instructions ."
+    ". room-select room-select-button  ."
+    ". make-room-button make-room-button  .";
+}
+.joinRoomSpan[b-rr9oazzmey] {
+  grid-area: instructions;
+}
+#joinRoom[b-rr9oazzmey] {
+  grid-area: room-select;
+}
+#joinRoomButton[b-rr9oazzmey] {
+  grid-area: room-select-button;
+}
+#makeRoomLabel[b-rr9oazzmey] {
+  grid-area: make-room-label;
+}
+#makeRoomButton[b-rr9oazzmey] {
+  grid-area: make-room-button;
+}

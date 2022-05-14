@@ -12,6 +12,132 @@
   row-gap: 0.5em;
   width: 90%;
 }
+span[b-rr9oazzmey],
+label[b-rr9oazzmey] {
+  color: azure;
+}
+.msgSpan[b-rr9oazzmey] {
+  color: black;
+}
+.userMessageButtonBox[b-rr9oazzmey] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.2em 0;
+}
+
+.loggedInDetailsBox span[b-rr9oazzmey] {
+  color: azure;
+}
+.loggedInDetailsBox[b-rr9oazzmey] {
+  margin-bottom: 1em;
+}
+#chooseRoomForm[b-rr9oazzmey] {
+  display: grid;
+  grid-template-columns: 1em auto 30% 1em;
+  grid-template-rows: auto;
+  gap: 0.3em;
+  place-content: center;
+  grid-template-areas:
+    ". instructions instructions ."
+    ". room-select room-select-button  ."
+    ". make-room-button make-room-button  .";
+}
+.joinRoomSpan[b-rr9oazzmey] {
+  grid-area: instructions;
+}
+#joinRoom[b-rr9oazzmey] {
+  grid-area: room-select;
+}
+#joinRoomButton[b-rr9oazzmey] {
+  grid-area: room-select-button;
+}
+#makeRoomLabel[b-rr9oazzmey] {
+  grid-area: make-room-label;
+}
+#makeRoomButton[b-rr9oazzmey] {
+  grid-area: make-room-button;
+}
+/* _content/WyrmChat/Components/ChatLogin.razor.rz.scp.css */
+label[b-papyuq0w82] {
+  color: azure;
+}
+input[b-papyuq0w82] {
+  border-radius: 1em;
+  padding: 0 0.5em;
+}
+form[b-papyuq0w82] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  padding: 1em 0;
+}
+#regForm[b-papyuq0w82] {
+  display: grid;
+  grid-template-columns: 1em 8em 1em 8em 1em;
+  row-gap: 0.3em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". label-username . input-username ."
+    ". label-password . input-password ."
+    ". button-confirm . button-cancel .";
+}
+
+#regNameLabel[b-papyuq0w82] {
+  grid-area: label-username;
+}
+
+#regNameInput[b-papyuq0w82] {
+  grid-area: input-username;
+}
+
+#regPassLabel[b-papyuq0w82] {
+  grid-area: label-password;
+}
+#regPassInput[b-papyuq0w82] {
+  grid-area: input-password;
+}
+
+#confirmRegisterButton[b-papyuq0w82] {
+  grid-area: button-confirm;
+}
+
+#cancelRegisterButton[b-papyuq0w82] {
+  grid-area: button-cancel;
+}
+
+#loginForm[b-papyuq0w82] {
+  display: grid;
+  grid-template-columns: 1em 8em 1em 8em 1em;
+  row-gap: 0.3em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". label-username . input-username ."
+    ". label-password . input-password ."
+    ". button-confirm . button-cancel .";
+}
+
+#logNameLabel[b-papyuq0w82] {
+  grid-area: label-username;
+}
+
+#logNameInput[b-papyuq0w82] {
+  grid-area: input-username;
+}
+
+#logPassLabel[b-papyuq0w82] {
+  grid-area: label-password;
+}
+#logPassInput[b-papyuq0w82] {
+  grid-area: input-password;
+}
+
+#confirmLoginButton[b-papyuq0w82] {
+  grid-area: button-confirm;
+}
+
+#cancelLoginButton[b-papyuq0w82] {
+  grid-area: button-cancel;
+}
 /* _content/WyrmChat/Shared/MainLayout.razor.rz.scp.css */
 .page[b-xxmivwk5yj] {
   position: relative;

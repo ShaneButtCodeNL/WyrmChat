@@ -78,90 +78,88 @@
         }
       },
       {
-        "HashCode": 1127599464,
+        "HashCode": -1882924258,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Components.ChatLogin",
+        "Name": "WyrmChat.App",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ChatLogin"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "setUser",
-            "TypeName": "System.Action<WyrmChat.Models.User>",
-            "Metadata": {
-              "Common.PropertyName": "setUser",
-              "Components.DelegateSignature": "True"
-            }
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Components.ChatLogin"
+          "Common.TypeName": "WyrmChat.App"
         }
       },
       {
-        "HashCode": -860406356,
+        "HashCode": -1691236479,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Components.ChatLogin",
+        "Name": "WyrmChat.App",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.Components.ChatLogin"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "setUser",
-            "TypeName": "System.Action<WyrmChat.Models.User>",
-            "Metadata": {
-              "Common.PropertyName": "setUser",
-              "Components.DelegateSignature": "True"
-            }
+            "TagName": "WyrmChat.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Components.ChatLogin",
+          "Common.TypeName": "WyrmChat.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": 873539341,
+        "HashCode": -351366856,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Components.ChatBox",
+        "Name": "WyrmChat.Shared.SurveyPrompt",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ChatBox"
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Components.ChatBox"
+          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt"
         }
       },
       {
-        "HashCode": -1117063014,
+        "HashCode": 1520490943,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Components.ChatBox",
+        "Name": "WyrmChat.Shared.SurveyPrompt",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.Components.ChatBox"
+            "TagName": "WyrmChat.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Components.ChatBox",
+          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -262,88 +260,90 @@
         }
       },
       {
-        "HashCode": -351366856,
+        "HashCode": 1127599464,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Shared.SurveyPrompt",
+        "Name": "WyrmChat.Components.ChatLogin",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SurveyPrompt"
+            "TagName": "ChatLogin"
           }
         ],
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
+            "Name": "setUser",
+            "TypeName": "System.Action<WyrmChat.Models.User>",
             "Metadata": {
-              "Common.PropertyName": "Title"
+              "Common.PropertyName": "setUser",
+              "Components.DelegateSignature": "True"
             }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt"
+          "Common.TypeName": "WyrmChat.Components.ChatLogin"
         }
       },
       {
-        "HashCode": 1520490943,
+        "HashCode": -860406356,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.Shared.SurveyPrompt",
+        "Name": "WyrmChat.Components.ChatLogin",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.Shared.SurveyPrompt"
+            "TagName": "WyrmChat.Components.ChatLogin"
           }
         ],
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
+            "Name": "setUser",
+            "TypeName": "System.Action<WyrmChat.Models.User>",
             "Metadata": {
-              "Common.PropertyName": "Title"
+              "Common.PropertyName": "setUser",
+              "Components.DelegateSignature": "True"
             }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.Shared.SurveyPrompt",
+          "Common.TypeName": "WyrmChat.Components.ChatLogin",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": -1882924258,
+        "HashCode": 873539341,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.App",
+        "Name": "WyrmChat.Components.ChatBox",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "ChatBox"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.App"
+          "Common.TypeName": "WyrmChat.Components.ChatBox"
         }
       },
       {
-        "HashCode": -1691236479,
+        "HashCode": -1117063014,
         "Kind": "Components.Component",
-        "Name": "WyrmChat.App",
+        "Name": "WyrmChat.Components.ChatBox",
         "AssemblyName": "WyrmChat",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WyrmChat.App"
+            "TagName": "WyrmChat.Components.ChatBox"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WyrmChat.App",
+          "Common.TypeName": "WyrmChat.Components.ChatBox",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

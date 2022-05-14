@@ -5,38 +5,42 @@
    <div class="ChatLoginContainer">
       @if(register && currentUser is null){
          <form id="regForm">
-            <label for="regName">UserName :</label>
-            <input type="text" id="regName" @bind=@registerUserName />
-            <label for="regPass">Password :</label>
-            <input type="text" id="regPass" @bind=@registerPassword />
-            <button type="button" onclick=@(()=>Register(registerUserName,registerPassword))>
-               Confirm
-            </button>
-            <button type="button" onclick=@(()=>Cancel())>
-               Cancel
-            </button>
+            <label  id="regNameLabel" for="regNameInput">UserName :</label>
+            <input type="text" id="regNameInput" @bind=@registerUserName />
+            <label id="regPassLabel" for="regPassInput">Password :</label>
+            <input type="text" id="regPassInput" @bind=@registerPassword />
+            
+               <button id="confirmRegisterButton" class="btn btn-primary" type="button" onclick=@(()=>Register(registerUserName,registerPassword))>
+                  Confirm
+               </button>
+               <button id="cancelRegisterButton" class="btn btn-primary"  type="button" onclick=@(()=>Cancel())>
+                  Cancel
+               </button>
+            
          </form>
       }
       @if(login && currentUser is null){
          <form id="loginForm">
-            <label for="logName">UserName :</label>
-            <input type="text" id="logName" @bind=@loginUserName  />
-            <label for="logPass">Password :</label>
-            <input type="password" id="logPass" @bind=@loginPassword   />
-            <button type="button" @onclick=@(()=>Login(loginUserName,loginPassword))>
-               Login           
-            </button>
-            <button type="button" @onclick=@(()=>Cancel())>
-               Cancel
-            </button>
+            <label id="logNameLabel" for="logNameInput">UserName :</label>
+            <input type="text" id="logNameInput" @bind=@loginUserName  />
+            <label id="logPassLabel" for="logPassInput">Password :</label>
+            <input type="password" id="logPassInput" @bind=@loginPassword   />
+            
+               <button id="confirmLoginButton" class="btn btn-primary" type="button" @onclick=@(()=>Login(loginUserName,loginPassword))>
+                  Login           
+               </button>
+               <button id="cancelLoginButton" class="btn btn-primary" type="button" @onclick=@(()=>Cancel())>
+                  Cancel
+               </button>
+            
          </form>
       }
       @if(!login && !register && currentUser is null){
          <form id="anonControl">
-            <button type="button" onclick=@(()=>{register=true;})>
+            <button type="button" class="btn btn-primary" onclick=@(()=>{register=true;})>
                Register
             </button>
-            <button type="button" onclick=@(()=>{login=true;})>
+            <button type="button" class="btn btn-primary" onclick=@(()=>{login=true;})>
                Login
             </button>
          </form>

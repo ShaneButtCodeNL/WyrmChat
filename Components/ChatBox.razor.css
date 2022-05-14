@@ -11,3 +11,49 @@
   row-gap: 0.5em;
   width: 90%;
 }
+span,
+label {
+  color: azure;
+}
+.msgSpan {
+  color: black;
+}
+.userMessageButtonBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.2em 0;
+}
+
+.loggedInDetailsBox span {
+  color: azure;
+}
+.loggedInDetailsBox {
+  margin-bottom: 1em;
+}
+#chooseRoomForm {
+  display: grid;
+  grid-template-columns: 1em auto 30% 1em;
+  grid-template-rows: auto;
+  gap: 0.3em;
+  place-content: center;
+  grid-template-areas:
+    ". instructions instructions ."
+    ". room-select room-select-button  ."
+    ". make-room-button make-room-button  .";
+}
+.joinRoomSpan {
+  grid-area: instructions;
+}
+#joinRoom {
+  grid-area: room-select;
+}
+#joinRoomButton {
+  grid-area: room-select-button;
+}
+#makeRoomLabel {
+  grid-area: make-room-label;
+}
+#makeRoomButton {
+  grid-area: make-room-button;
+}

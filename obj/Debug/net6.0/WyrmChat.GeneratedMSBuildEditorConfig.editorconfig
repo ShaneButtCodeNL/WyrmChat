@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WyrmChat
 build_property.RootNamespace = WyrmChat
-build_property.ProjectDir = e:\code\cSharp\WyrmChat\
+build_property.ProjectDir = E:\code\cSharp\WyrmChat\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = e:\code\cSharp\WyrmChat
+build_property.MSBuildProjectDirectory = E:\code\cSharp\WyrmChat
 build_property._RazorSourceGeneratorDebug = 
 
-[e:/code/cSharp/WyrmChat/App.razor]
+[E:/code/cSharp/WyrmChat/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/Components/ChatLogin.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGF0TG9naW4ucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[e:/code/cSharp/WyrmChat/Pages/About.razor]
+[E:/code/cSharp/WyrmChat/Pages/About.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/Pages/Index.razor]
+[E:/code/cSharp/WyrmChat/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/Shared/SurveyPrompt.razor]
+[E:/code/cSharp/WyrmChat/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/_Imports.razor]
+[E:/code/cSharp/WyrmChat/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/Components/ChatBox.razor]
+[E:/code/cSharp/WyrmChat/Components/ChatBox.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGF0Qm94LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-rr9oazzmey
 
-[e:/code/cSharp/WyrmChat/Shared/MainLayout.razor]
+[E:/code/cSharp/WyrmChat/Components/ChatLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGF0TG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-papyuq0w82
+
+[E:/code/cSharp/WyrmChat/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-xxmivwk5yj
 
-[e:/code/cSharp/WyrmChat/Pages/Error.cshtml]
+[E:/code/cSharp/WyrmChat/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/Pages/_Host.cshtml]
+[E:/code/cSharp/WyrmChat/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/code/cSharp/WyrmChat/Pages/_Layout.cshtml]
+[E:/code/cSharp/WyrmChat/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
