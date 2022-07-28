@@ -1,0 +1,79 @@
+label[b-papyuq0w82] {
+  color: azure;
+}
+input[b-papyuq0w82] {
+  border-radius: 1em;
+  padding: 0 0.5em;
+}
+form[b-papyuq0w82] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  padding: 1em 0;
+}
+#regForm[b-papyuq0w82] {
+  display: grid;
+  grid-template-columns: 1em 8em 1em 8em 1em;
+  row-gap: 0.3em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". label-username . input-username ."
+    ". label-password . input-password ."
+    ". button-confirm . button-cancel .";
+}
+
+#regNameLabel[b-papyuq0w82] {
+  grid-area: label-username;
+}
+
+#regNameInput[b-papyuq0w82] {
+  grid-area: input-username;
+}
+
+#regPassLabel[b-papyuq0w82] {
+  grid-area: label-password;
+}
+#regPassInput[b-papyuq0w82] {
+  grid-area: input-password;
+}
+
+#confirmRegisterButton[b-papyuq0w82] {
+  grid-area: button-confirm;
+}
+
+#cancelRegisterButton[b-papyuq0w82] {
+  grid-area: button-cancel;
+}
+
+#loginForm[b-papyuq0w82] {
+  display: grid;
+  grid-template-columns: 1em 8em 1em 8em 1em;
+  row-gap: 0.3em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". label-username . input-username ."
+    ". label-password . input-password ."
+    ". button-confirm . button-cancel .";
+}
+
+#logNameLabel[b-papyuq0w82] {
+  grid-area: label-username;
+}
+
+#logNameInput[b-papyuq0w82] {
+  grid-area: input-username;
+}
+
+#logPassLabel[b-papyuq0w82] {
+  grid-area: label-password;
+}
+#logPassInput[b-papyuq0w82] {
+  grid-area: input-password;
+}
+
+#confirmLoginButton[b-papyuq0w82] {
+  grid-area: button-confirm;
+}
+
+#cancelLoginButton[b-papyuq0w82] {
+  grid-area: button-cancel;
+}

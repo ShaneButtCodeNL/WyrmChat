@@ -1,0 +1,79 @@
+label {
+  color: azure;
+}
+input {
+  border-radius: 1em;
+  padding: 0 0.5em;
+}
+form {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  padding: 1em 0;
+}
+#regForm {
+  display: grid;
+  grid-template-columns: 1em 8em 1em 8em 1em;
+  row-gap: 0.3em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". label-username . input-username ."
+    ". label-password . input-password ."
+    ". button-confirm . button-cancel .";
+}
+
+#regNameLabel {
+  grid-area: label-username;
+}
+
+#regNameInput {
+  grid-area: input-username;
+}
+
+#regPassLabel {
+  grid-area: label-password;
+}
+#regPassInput {
+  grid-area: input-password;
+}
+
+#confirmRegisterButton {
+  grid-area: button-confirm;
+}
+
+#cancelRegisterButton {
+  grid-area: button-cancel;
+}
+
+#loginForm {
+  display: grid;
+  grid-template-columns: 1em 8em 1em 8em 1em;
+  row-gap: 0.3em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". label-username . input-username ."
+    ". label-password . input-password ."
+    ". button-confirm . button-cancel .";
+}
+
+#logNameLabel {
+  grid-area: label-username;
+}
+
+#logNameInput {
+  grid-area: input-username;
+}
+
+#logPassLabel {
+  grid-area: label-password;
+}
+#logPassInput {
+  grid-area: input-password;
+}
+
+#confirmLoginButton {
+  grid-area: button-confirm;
+}
+
+#cancelLoginButton {
+  grid-area: button-cancel;
+}

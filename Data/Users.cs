@@ -10,7 +10,7 @@ public class Users{
    private static int NextId=1;
    public static List<User> UserList=new ();
    private static User? MakeUser(string username,string password){
-      if(username is not null && password is not null && username !="" && password!=""){
+      if(username is not null && password is not null && username !="" && password!=""&& !UserList.Exists(u=>u.UserName==username)){
          var user= new User(){UserName=username,UserID=NextId};
          user.UpdatePassword(password,"");
          NextId++;
